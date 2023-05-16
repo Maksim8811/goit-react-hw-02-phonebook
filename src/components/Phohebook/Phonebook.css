@@ -1,0 +1,40 @@
+.title {
+    text-align: center;
+}
+
+.container_form {
+    margin-left: auto;
+    margin-right: auto;
+   max-width: 320px; 
+}
+
+.form {
+
+   padding:0px 14px;
+    border: 1px solid rgb(14, 12, 12);
+}
+
+.label_form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+    margin-bottom: 8px;
+}
+
+.input {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.button {
+    width: max-content;
+    cursor: pointer;
+    border: 1px solid rgb(143, 137, 137);
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+}
+
+.button:hover {
+    background-color: rgba(181, 247, 247, 0.902);
+    
+}
