@@ -1,14 +1,16 @@
 import React from "react";
 import "./Phonebook.css"
 
-function Phonebook () {
+function Phonebook ({ handleChange, handleSubmit}) {
+    
     return (
         <>
         <h1 className="title">Phonebook</h1>
         <div className="container_form">
-       <form className="form">
+       <form className="form" onSubmit={handleSubmit}>
         <label className="label_form">Name
        <input
+    onChange={handleChange}
   className="input"     
   type="text"
   name="name"
