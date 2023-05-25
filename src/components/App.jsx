@@ -1,39 +1,27 @@
 import React, {Component} from "react";
 import Phonebook from "./Phohebook/Phonebook";
-import Contacts from "./Contacts/Contacts"
+// import Contacts from "./Contacts/Contacts";
+
 
 class App extends Component {
 
   state = {
-    contacts: [{name: "Adel Duko", id: 1},{name: "Dido ryk", id: 2}],
+    contacts: [],
     name: ''
   }
 
-  
-
-  handleChange = evt => {
-    const {value} = evt.target
-    this.setState({name: value})
-    
+  formSubmitHandler = data => {
+    console.log('data', data)
   }
-
-  handleSubmit = ev => {
-    ev.preventDefault()
-    const {name} = this.state
-    console.log(name)
-  }
-
-  addContacts = () => {
-    console.log('first')
-  }
-
-  
 
   render () {
+  
     return (
       <>
-    <Phonebook handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
-    <Contacts addContacts={this.addContacts} contacts={this.state.contacts}/>
+      <h1 className="title">Phonebook</h1>
+    <Phonebook onSubmit={this.formSubmitHandler}/>
+    {/* <h2>Contacts</h2>
+    <Contacts/> */}
     </>
     )
   }

@@ -1,16 +1,35 @@
-import React from "react";
+import React, {Component} from "react";
 import "./Phonebook.css"
+// import { nanoid } from 'nanoid';
 
-function Phonebook ({ handleChange, handleSubmit}) {
+class Phonebook extends Component {
     
-    return (
+    state = {
+        name: '',
+      }
+
+
+      handleChange = evt => {
+        this.setState({name: evt.target.value})
+        
+    }
+
+    handleSubmit = ev => {
+        ev.preventDefault()
+        this.props.onSubmit(this.state)
+      }
+     
+
+    render () {
+        return (
         <>
-        <h1 className="title">Phonebook</h1>
+        
         <div className="container_form">
-       <form className="form" onSubmit={handleSubmit}>
+       <form className="form" onSubmit={this.handleSubmit}>
         <label className="label_form">Name
        <input
-    onChange={handleChange}
+  onChange={this.handleChange} 
+  value={this.state.name} 
   className="input"     
   type="text"
   name="name"
@@ -18,13 +37,15 @@ function Phonebook ({ handleChange, handleSubmit}) {
   title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
   required
 />
-<button className="button" type="button">Add contact</button>
+<button className="button" type="submit" >Add contact</button>
 </label>
        </form>
        </div>
        
 </>
-    )
+    
+)
+}
 }
 
 export default Phonebook;
