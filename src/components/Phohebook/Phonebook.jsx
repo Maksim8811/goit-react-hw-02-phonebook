@@ -1,6 +1,7 @@
 import React, {Component} from "react";
-import "./Phonebook.css"
+import "./Phonebook.css";
 import { nanoid } from 'nanoid';
+import PropTypes from 'prop-types';
 
 class Phonebook extends Component {
     loginInputId = nanoid()
@@ -16,7 +17,7 @@ class Phonebook extends Component {
       handleChange = evt => {
         const {name, value} = evt.target
         this.setState({[name]: value})
-        console.log('this.state', name, value)
+        
         
     }
 
@@ -35,19 +36,18 @@ class Phonebook extends Component {
         
         return (
         <>
-        
         <div className="container_form">
-       <form htmlFor={this.loginInputId} className="form" onSubmit={this.handleSubmit}>
+        <form htmlFor={this.loginInputId} className="form" onSubmit={this.handleSubmit}>
         <label className="label_form" id={this.loginInputId}>Name
-       <input
-  onChange={this.handleChange} 
-  value={this.state.name} 
-  className="input"     
-  type="text"
-  name="name"
-  pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-  title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-  required
+        <input
+        onChange={this.handleChange} 
+        value={this.state.name} 
+        className="input"     
+        type="text"
+        name="name"
+        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+        title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+        required
 />
 
 <label className="label_form" id={this.telInputId}>Number
@@ -71,6 +71,10 @@ class Phonebook extends Component {
     
 )
 }
+}
+
+Phonebook.propTypes = {
+    onSubmit: PropTypes.func
 }
 
 export default Phonebook;

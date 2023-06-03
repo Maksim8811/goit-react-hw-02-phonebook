@@ -1,0 +1,12 @@
+.filter {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 320px; 
+    
+}
+
+.filter_input {
+    margin-top: 10px;
+}

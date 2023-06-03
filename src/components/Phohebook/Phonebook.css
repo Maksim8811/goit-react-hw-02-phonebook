@@ -5,13 +5,15 @@
 .container_form {
     margin-left: auto;
     margin-right: auto;
-   max-width: 320px; 
-}
+    max-width: 320px; 
+} 
 
 .form {
 
-   padding:0px 14px;
+    padding:0px 14px;
     border: 1px solid rgb(14, 12, 12);
+    border-radius: 5px;
+    background-color:rgba(0, 157, 255, 0.062);
 }
 
 .label_form {
@@ -31,7 +33,7 @@
     cursor: pointer;
     border: 1px solid rgb(143, 137, 137);
     border-radius: 3px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(26, 223, 167, 0.413);
 }
 
 .button:hover {
